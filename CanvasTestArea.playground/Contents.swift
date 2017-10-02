@@ -25,8 +25,6 @@ let canvas = Canvas(width: 500, height: 700)
 
 // Draw a circle at the origin with radius of 50 pixels
 
-canvas.drawEllipse(centreX: 0, centreY: 0, width: 50, height: 50)
-
 // Show where the origin is
 canvas.translate(byX: 300, byY: 0)
 canvas.drawAxes()
@@ -37,8 +35,27 @@ canvas.drawAxes()
 PlaygroundPage.current.liveView = canvas.imageView
 
 
-//Ears
+//Ears (Right ear
+canvas.translate(byX: 90, byY: 310)
+canvas.rotate(by: 45)
+canvas.drawEllipse(centreX: 0, centreY: 0, width: 65, height:90, borderWidth: 3)
 
+canvas.rotate(by: -45)
+canvas.translate(byX: -90, byY: -310)
+
+//Left ear
+
+canvas.translate(byX: -140, byY: 310)
+canvas.rotate(by: -45)
+canvas.drawEllipse(centreX: 0, centreY: 0, width: 65, height:90, borderWidth: 3)
+canvas.rotate(by: 45)
+canvas.translate(byX: 140, byY: -310)
+
+
+// White part that erases part of ear
+canvas.borderColor = Color.white
+canvas.fillColor = Color.white
+canvas.drawEllipse(centreX: -23, centreY: 260, width: 290, height: 160, borderWidth: 0)
 
 // This is the eye of the panda (the black part)
 canvas.translate(byX: -300, byY: 0)
@@ -66,6 +83,8 @@ canvas.drawEllipse(centreX: 65, centreY: 20, width: 10, height: 10)
 canvas.rotate(by: 0)
 canvas.drawEllipse(centreX: 150, centreY: 20, width: 10, height: 10)
 
+//The Mouth
+canvas.drawEllipse(centreX: <#T##Int#>, centreY: <#T##Int#>, width: <#T##Int#>, height: <#T##Int#>)
 
 
 
