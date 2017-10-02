@@ -21,18 +21,46 @@ import Cocoa
 import PlaygroundSupport
 
 // Create a new canvas
-let canvas = Canvas(width: 300, height: 500)
+let canvas = Canvas(width: 500, height: 300)
 
 // Draw a circle at the origin with radius of 50 pixels
+
 canvas.drawEllipse(centreX: 0, centreY: 0, width: 50, height: 50)
 
 // Show where the origin is
+canvas.translate(byX: 300, byY: 0)
 canvas.drawAxes()
 
 // Draw an ellipse in a different color at the centre of the canvas
-canvas.fillColor = Color.green
-canvas.drawEllipse(centreX: 150, centreY: 250, width: 50, height: 100)
-
 
 // This code is necessary to see the result in the Assistant Editor at right
 PlaygroundPage.current.liveView = canvas.imageView
+
+// This is the eye of the panda (the black part)
+canvas.translate(byX: -300, byY: 0)
+canvas.drawAxes()
+canvas.fillColor = Color.black
+canvas.rotate(by: 25)
+canvas.translate(byX: 300, byY: -150)
+canvas.drawEllipse(centreX: 100, centreY: 200, width: 65, height:90, borderWidth: 3)
+
+// This part is the black nose circle
+canvas.translate(byX: -50, byY: 60)
+canvas.rotate(by: -25)
+canvas.drawEllipse(centreX: 3, centreY: 150, width: 30, height: 20)
+
+canvas.translate(byX: -100, byY: 190)
+canvas.drawAxes()
+canvas.fillColor = Color.black
+canvas.rotate(by: -25)
+
+// This part is the eyes that is white
+canvas.drawEllipse(centreX: 35, centreY: 15, width: 65, height:90, borderWidth: 3)
+canvas.rotate(by: 25)
+canvas.fillColor = Color.white
+canvas.drawEllipse(centreX: 65, centreY: 20, width: 10, height: 10)
+canvas.rotate(by: 0)
+canvas.drawEllipse(centreX: 150, centreY: 20, width: 10, height: 10)
+
+
+
