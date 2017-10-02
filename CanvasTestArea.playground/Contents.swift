@@ -21,7 +21,7 @@ import Cocoa
 import PlaygroundSupport
 
 // Create a new canvas
-let canvas = Canvas(width: 500, height: 300)
+let canvas = Canvas(width: 500, height: 700)
 
 // Draw a circle at the origin with radius of 50 pixels
 
@@ -35,6 +35,10 @@ canvas.drawAxes()
 
 // This code is necessary to see the result in the Assistant Editor at right
 PlaygroundPage.current.liveView = canvas.imageView
+
+
+//Ears
+
 
 // This is the eye of the panda (the black part)
 canvas.translate(byX: -300, byY: 0)
@@ -61,6 +65,11 @@ canvas.fillColor = Color.white
 canvas.drawEllipse(centreX: 65, centreY: 20, width: 10, height: 10)
 canvas.rotate(by: 0)
 canvas.drawEllipse(centreX: 150, centreY: 20, width: 10, height: 10)
+
+
+
+
+
 
 
 
